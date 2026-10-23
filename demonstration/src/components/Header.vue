@@ -2,23 +2,19 @@
 </script>
 
 <template>
-  <header>
-    <h1>Demonstration</h1>
+  <header class="bg-red-900 text-olive-200">
+    <div class="text-3xl font-bold">Demonstration</div>
   </header>
-  <div class="header-flare"></div>
+  <div class="header-flare bg-amber-400/70"></div>
 </template>
 
 <style scoped>
 header {
   display: flex;
   justify-content: center;
-  width: 100%;
-  background-color: rgb(127, 23, 23);
-  color: hsl(67, 26%, 88%);
 }
 .header-flare {
-  background-color: hsl(35, 53%, 50%);
   height: 8px;
-  border-bottom: 2px solid #fbff00;
+  border-bottom: 2px solid var(--color-olive-800); 
 }
 </style>

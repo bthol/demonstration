@@ -9,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="page-title-layout">
+  <div class="page-title-layout text-3xl font-bold underline">
     <h1>{{ title }}</h1>
   </div>
 </template>
@@ -19,5 +19,6 @@ defineProps({
   display: flex;
   justify-content: center;
   padding: 1rem;
+  width: 100%;
 }
 </style>

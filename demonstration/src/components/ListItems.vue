@@ -15,13 +15,13 @@ const props = defineProps({
 
 <template>
 
-  <ul v-if="inline" class="list-items-layout inline">
+  <ul v-if="inline" class="list-items-layout inline-style">
     <li v-for="(item, index) in list" :key="index">
       {{ item }}
     </li>
   </ul>
 
-  <ul v-else class="list-items-layout">
+  <ul v-else class="list-items-layout block-style">
     <li v-for="(item, index) in list" :key="index">
       {{ item }}
     </li>
@@ -32,14 +32,20 @@ const props = defineProps({
 <style scoped>
 .list-items-layout {
   display: flex;
-  justify-content: center;
-  align-items: center;
   list-style-type: none;
   padding: 1rem;
   margin: 0px;
-  flex-direction: column;
 }
-.inline {
+.block-style {
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+}
+.inline-style {
+  justify-content: center;
   flex-direction: row;
+  width: 100%;
+  overflow-x: scroll;
 }
 </style>
