@@ -45,6 +45,7 @@ const props = defineProps({
 .inline-style {
   justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   overflow-x: scroll;
 }

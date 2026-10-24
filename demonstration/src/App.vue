@@ -7,7 +7,7 @@ import ListItems from './components/ListItems.vue'
 
 const titleRef = ref('Title of the Page')
 let listBuild = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 100; i++) {
   listBuild.push(i + 1);
 }
 const listRef = reactive(listBuild)
@@ -33,7 +33,7 @@ const listRef = reactive(listBuild)
     </aside>
 
   </div>
-  
+
   <Footer />
 
 </template>

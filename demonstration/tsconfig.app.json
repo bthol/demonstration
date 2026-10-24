@@ -5,6 +5,12 @@
     "types": ["vite/client"],
     "allowArbitraryExtensions": true,
 
+    "rootDir": "./src",
+    "outDir": "./build/scripts",
+    "allowJs": false,
+    "removeComments": true,
+    "strict": true,
+
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
