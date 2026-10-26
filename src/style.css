@@ -3,7 +3,19 @@
 :root {
   --font: system-ui, 'Segoe UI', Roboto, sans-serif;
   font: 18px/145% var(--font);
-  color: var(--color-olive-800);
+  
+  /* colors */
+  --font-color-1: var(--color-olive-800);
+  --font-color-2: var(--color-olive-200);
+
+  --detail-color-1: var(--color-amber-400);
+  --detail-color-2: var(--color-olive-800);
+
+  --solid-color-1: var(--color-red-900);
+  --solid-color-2: var(--color-olive-50);
+  --solid-color-3: var(--color-olive-200);
+
+  color: var(--font-color-1);
 }
 
   /* background-color: rgb(127, 23, 23);

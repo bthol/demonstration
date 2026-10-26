@@ -48,5 +48,6 @@ const props = defineProps({
   flex-wrap: wrap;
   width: 100%;
   overflow-x: scroll;
+  margin: 4px 0px;
 }
 </style>

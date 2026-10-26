@@ -12,8 +12,8 @@ footer {
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: var(--color-red-900);
-  color: var(--color-olive-200);
-  border-bottom: 2px solid var(--color-olive-800); 
+  background-color: var(--solid-color-1);
+  color: var(--font-color-2);
+  border-top: 2px solid var(--detail-color-2);
 }
 </style>

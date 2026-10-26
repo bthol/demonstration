@@ -9,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="page-title-layout text-3xl font-bold underline">
+  <div class="page-title-layout text-3xl font-bold">
     <h1>{{ title }}</h1>
   </div>
 </template>
