@@ -6,14 +6,7 @@ import PageTitle from './components/PageTitle.vue'
 import ContentSection from './components/ContentSection.vue'
 import SectionLinks from './components/SectionLinks.vue'
 import ProjectLinks from './components/ProjectLinks.vue'
-import ListItems from './components/ListItems.vue'
-
-// list generator
-let listBuild = [];
-for (let i = 0; i < 100; i++) {
-  listBuild.push(i + 1);
-}
-const listRef = reactive(listBuild);
+import Image from './components/Image.vue'
 
 // store page title in ref
 const titleRef = ref('Title of the Page');
@@ -51,7 +44,10 @@ onMounted(() => {
     </aside>
     
     <main ref="mainContent">
+
       <PageTitle :title="titleRef" />
+      
+      <Image fileName="Demo.jpg" imgAlt="page-image" imgWidth="50vmin"/>
       
       <ContentSection :subtitle="sectionList[0]" text="
       Lorem ipsum dolor sit amet consectetur adipiscing elit. Expedita excepturi accusamus minim deserunt sit esse cumque officia. Do assumenda cupidatat in fugiat nobis libero enim ducimus sed similique illum cupiditate.
@@ -67,8 +63,6 @@ onMounted(() => {
       <ContentSection :subtitle="sectionList[2]" text="This is an example text. It will show how text will be rendered in section templates for the purpose of testing and adjusting to taste.
 
       /Section templates allow for multiple paragraphs, so that content can be broken into multiple digestible and thematically-related parts. The result reads very much like an article." />
-
-      <ListItems :list="listRef" :inline="true" />
 
     </main>
     
