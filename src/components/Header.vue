@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import Image from './Image.vue'
+const root = `http://localhost:${import.meta.env.VITE_PORT}`; // development
+// const root = "https://demonstration-f118509618ea.herokuapp.com/"; // production
 </script>
 
 <template>
@@ -13,7 +14,9 @@ import Image from './Image.vue'
     </div>
 
     <div class="website-logo-layout">
-      <Image file-name="Demo.jpg" img-alt="website-logo" img-width="75px"/>
+      <a :href="root" rel="noopener noreferrer" class="logo-style">
+        <img src="../assets/images/Demo.jpg" alt="website-logo"/>
+      </a>
     </div>
 
     <div class="search-layout">
@@ -24,6 +27,15 @@ import Image from './Image.vue'
 </template>
 
 <style scoped>
+.website-logo-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-style {
+  width: 75px;
+  margin: 8px;
+}
 header {
   display: grid;
   grid-template-columns: 1fr 7fr 1fr;
