@@ -39,7 +39,6 @@ const imageSrc = computed(() => {
 }
 img {
   margin: 5px;
-  /* border: 1px solid var(--image-border); */
   width: v-bind('props.imgWidth');
 }
 </style>

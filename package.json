@@ -6,9 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node ./server.cjs",
-    "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "buildstart": "vue-tsc -b && vite build && node ./server.cjs"
   },
   "repository": {
     "type": "git",

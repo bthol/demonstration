@@ -15,8 +15,6 @@
   --solid-color-2: var(--color-olive-50);
   --solid-color-3: var(--color-olive-200);
 
-  --image-border: hsl(240, 10%, 10%);
-
   color: var(--font-color-1);
 }
 

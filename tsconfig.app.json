@@ -6,7 +6,7 @@
     "allowArbitraryExtensions": true,
 
     "rootDir": "./src",
-    "outDir": "./build/scripts",
+    "outDir": "./build",
     "allowJs": false,
     "removeComments": true,
     "strict": true,
@@ -17,5 +17,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/pages/**/*.ts", "src/pages/**/*.tsx", "src/pages/**/*.vue", "src/components/*.vue"]
 }

@@ -10,13 +10,13 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // redirect root to first project
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'src', 'pages', 'main', 'main.html'));
 });
 
 // project links are routed to project pages using route param
 app.get('/projects/:name', (req, res) => {
   const name = req.params.name;
-  const filePath = path.join(__dirname, 'dist', `${name}.html`);
+  const filePath = path.join(__dirname, 'dist', 'src', 'pages', `${name}`, `${name}.html`);
   res.sendFile(filePath, (err) => {
     if (err) {
       // Fallback for file not found (404)
