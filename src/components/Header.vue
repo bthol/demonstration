@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const root = `http://localhost:${import.meta.env.VITE_PORT}`; // development
-// const root = "https://demonstration-f118509618ea.herokuapp.com/"; // production
+// const root = `http://localhost:${import.meta.env.VITE_PORT}`; // development
+const root = "https://demonstration-f118509618ea.herokuapp.com/"; // production
 </script>
 
 <template>

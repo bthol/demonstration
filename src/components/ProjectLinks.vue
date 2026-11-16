@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 
+// const root = `http://localhost:${import.meta.env.VITE_PORT}`; // development
+const root = "https://demonstration-f118509618ea.herokuapp.com/"; // production
+
 const projects: Array<{name: string, publishDate: Date}> = [
   // project static data
   // date format: yyyy-mm-dd
@@ -8,9 +11,6 @@ const projects: Array<{name: string, publishDate: Date}> = [
   // new project names here
   
 ];
-
-const root = `http://localhost:${import.meta.env.VITE_PORT}`; // development
-// const root = "https://demonstration-f118509618ea.herokuapp.com/"; // production
 
 interface ProjectInterface {
   name: string,
