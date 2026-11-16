@@ -1,12 +1,21 @@
 <script setup lang="ts">
 // const root = `http://localhost:${import.meta.env.VITE_PORT}`; // development
 const root = "https://demonstration-f118509618ea.herokuapp.com/"; // production
+const props = defineProps({
+  showMenu: {
+    type: Boolean,
+    required: false
+  },
+})
+const emit = defineEmits<{
+  (e: 'menuSelected', toggled: boolean): void
+}>()
 </script>
 
 <template>
   <header>
     <div class="hamburger-layout">
-      <div class="hamburger-container">
+      <div class="hamburger-container" :class="{ 'open': showMenu }" @click="emit('menuSelected', true)">
         <div></div>
         <div></div>
         <div></div>
@@ -57,7 +66,10 @@ header {
   margin: 10px;
   cursor: pointer;
   display: relative;
-  /* transform: rotate(90deg); */
+  transition: transform 80ms ease-out;
+}
+.open {
+  transform: rotate(90deg);
 }
 .hamburger-container > div {
   width: calc(7px * var(--hamburger-scale));

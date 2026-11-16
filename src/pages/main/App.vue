@@ -38,15 +38,36 @@ onMounted(() => {
     mainContent.value.focus();
   }
 });
+
+// mobile environment test
+const mobileMaxWidth: number = 768; // pixels
+const mobile = ref<boolean>(window.innerWidth < mobileMaxWidth);
+window.addEventListener('resize', () => {
+  if (mobile.value) {
+    if (window.innerWidth < mobileMaxWidth) {
+      mobile.value = true;
+    }
+  } else {
+    if (window.innerWidth > mobileMaxWidth) {
+      mobile.value = false;
+    }
+  }
+});
+
+// handle menu events
+const showMenu = ref<boolean>(!mobile.value);
+function handleMenu() {
+  showMenu.value = !showMenu.value;
+}
 </script>
 
 <template>
   
-  <Header />
+  <Header @menuSelected="handleMenu" :showMenu="showMenu" />
 
   <div class="content-layout">
 
-    <aside ref="asideLeft" class="text-l">
+    <aside v-if="showMenu" ref="asideLeft" class="text-l">
       <div class="aside-label font-bold">Projects</div>
       <ProjectLinks />
     </aside>
@@ -65,7 +86,7 @@ onMounted(() => {
 
     </main>
     
-    <aside ref="asideRight" class="text-l">
+    <aside v-if="!mobile" ref="asideRight" class="text-l">
       <div class="aside-label font-bold">Navigation</div>
       <SectionLinks :sectionList="sectionList" />
     </aside>
@@ -81,6 +102,7 @@ onMounted(() => {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   min-height: 100vh;
+  background-color: var(--solid-color-3);
 }
 main, aside {
   max-height: 100vh;
@@ -88,9 +110,8 @@ main, aside {
 }
 main {
   background-color: var(--solid-color-2);
-}
-aside {
-  background-color: var(--solid-color-3);
+  grid-column: 2;
+  min-width: 300px;
 }
 .aside-label {
   margin: 1rem;
