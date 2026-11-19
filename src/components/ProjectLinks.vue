@@ -68,11 +68,11 @@ const list = reactive(publishDateFilter(projectArr));
   flex-direction: column;
   overflow-y: scroll;
 }
-li {
-  /* padding: 3px 8px; */
+a {
+  padding: 3px 8px;
   cursor: pointer;
 }
-li:hover {
-  background-color: var(--solid-color-2);
+a:hover {
+  background-color: var(--solid-color-3);
 }
 </style>

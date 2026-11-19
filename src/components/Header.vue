@@ -65,17 +65,42 @@ header {
   --hamburger-scale: 5;
   margin: 10px;
   cursor: pointer;
-  display: relative;
-  transition: transform 80ms ease-out;
-}
-.open {
-  transform: rotate(90deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .hamburger-container > div {
-  width: calc(7px * var(--hamburger-scale));
+  display: relative;
+  transition: transform 100ms ease-out;
+  width: calc(5px * var(--hamburger-scale) * 1.4142135623730950488016887242097);
   height: calc(1px * var(--hamburger-scale));
-  margin: calc(1px * var(--hamburger-scale)) 0px;
+  margin: calc(.5px * var(--hamburger-scale)) 0px;
   background-color: var(--detail-color-2);
+}
+.open {
+  transform: rotate(-90deg);
+}
+.open.hamburger-container {
+  width: calc(5px * var(--hamburger-scale) * 1.4142135623730950488016887242097);
+  height: calc(5px * var(--hamburger-scale) * 1.4142135623730950488016887242097);
+}
+.open.hamburger-container > div:not(:first-child):not(:last-child) {
+  opacity: 0;
+}
+.open.hamburger-container > div:first-child {
+  transform: rotate(45deg);
+  margin: 0px;
+  position: relative;
+  top: calc(5px * var(--hamburger-scale) * 1.4142135623730950488016887242097 / 4.5);
+  border-radius: 3px;
+}
+.open.hamburger-container > div:last-child {
+  transform: rotate(-45deg);
+  margin: 0px;
+  position: relative;
+  top: calc(5px * var(--hamburger-scale) * 1.4142135623730950488016887242097 * -1 / 4.5);
+  border-radius: 3px;
 }
 .search-layout {
   display: flex;

@@ -8,8 +8,9 @@ import SectionLinks from '../../components/SectionLinks.vue'
 import ProjectLinks from '../../components/ProjectLinks.vue'
 import Image from '../../components/Image.vue'
 
-// store page title in ref
+// store refs
 const titleRef = ref('ConductR');
+const fileName = ref('ConductR.png');
 
 // declare new sets for section titles and content
 let sectionList: Set<string> | Array<string> = new Set();
@@ -61,7 +62,7 @@ window.addEventListener('resize', () => {
 });
 
 // handle menu events
-const showMenu = ref<boolean>(!mobile);
+const showMenu = ref<boolean>(false);
 function handleMenu() {
   showMenu.value = !showMenu.value;
 }
@@ -73,7 +74,7 @@ function handleMenu() {
 
   <div class="content-layout">
 
-    <aside ref="asideLeft" class="text-l">
+    <aside v-if="showMenu" ref="asideLeft" class="aside-left text-l" :class="{'slide-open': showMenu}">
       <div class="aside-label font-bold">Projects</div>
       <ProjectLinks />
     </aside>
@@ -82,7 +83,7 @@ function handleMenu() {
 
       <PageTitle :title="titleRef" />
       
-      <Image fileName="ConductR.png" imgAlt="page-image" imgWidth="50vmin"/>
+      <Image :fileName="fileName" imgAlt="page-image" imgWidth="50vmin"/>
 
       <ContentSection v-for="(section, index) in sectionList"
         :key="section"
@@ -116,8 +117,33 @@ main, aside {
 }
 main {
   background-color: var(--solid-color-2);
+  grid-column: 2;
+  min-width: 300px;
 }
 .aside-label {
   margin: 1rem;
+}
+.aside-left {
+  position: absolute;
+  left: 0px;
+  width: 85vw;
+  background-color: var(--solid-color-2);
+  box-shadow: 0px 5px 8px 2px rgba(0, 0, 0, 0.2);
+}
+.slide-open {
+  animation: slide-open 240ms cubic-bezier(0.475, 0.170, 0.000, 0.610);
+}
+@keyframes slide-open {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@media (min-width: 768px) {
+  .aside-left {
+    width: 25vw;
+  }
 }
 </style>
