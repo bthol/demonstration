@@ -7,6 +7,7 @@
   /* colors */
   --font-color-1: var(--color-olive-800);
   --font-color-2: var(--color-olive-200);
+  --font-color-3: var(--color-gray-500);
 
   --detail-color-1: var(--color-amber-400);
   --detail-color-2: var(--color-olive-800);
@@ -20,3 +21,13 @@
 
   /* background-color: rgb(127, 23, 23);
   color: hsl(67, 26%, 91%); */
+
+.sub-title-layout {
+  display: flex;
+  border-bottom: 2px solid var(--detail-color-2);
+  margin: 0rem 1rem;
+}
+p {
+  margin: 1rem;
+  text-indent: 2rem;
+}

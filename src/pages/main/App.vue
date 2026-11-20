@@ -4,6 +4,7 @@ import Header from '../../components/Header.vue'
 import Footer from '../../components/Footer.vue'
 import PageTitle from '../../components/PageTitle.vue'
 import ContentSection from '../../components/ContentSection.vue'
+import SectionOutline from '../../components/SectionOutline.vue'
 import SectionLinks from '../../components/SectionLinks.vue'
 import ProjectLinks from '../../components/ProjectLinks.vue'
 import Image from '../../components/Image.vue'
@@ -78,6 +79,15 @@ function handleMenu() {
       <PageTitle :title="titleRef" />
       
       <Image :fileName="fileName" imgAlt="page-image" imgWidth="50vmin"/>
+      
+      <br>
+
+      <section v-if="mobile">
+        <div class="sub-title-layout text-xl font-bold">
+          <h3>Outline</h3>
+        </div>
+        <SectionOutline :sectionList="sectionList" />
+      </section>
 
       <ContentSection v-for="(section, index) in sectionList"
         :key="section"

@@ -25,14 +25,5 @@ const paragraphs = props.text.split('/');
 </template>
 
 <style scoped>
-.sub-title-layout {
-  display: flex;
-  border-bottom: 2px solid var(--detail-color-2);
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-p {
-  margin: 1rem;
-  text-indent: 2rem;
-}
+
 </style>

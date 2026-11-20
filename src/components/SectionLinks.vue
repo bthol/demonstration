@@ -38,12 +38,17 @@ const linkSection = (id:string) => {
   overflow-y: scroll;
 }
 li {
-  padding: 3px 8px;
+  padding: 5px 8px;
   border-left: 3px solid var(--detail-color-2);
   cursor: pointer;
+  color: var(--font-color-3);
+  box-sizing: border-box;
+  width: 95%;
 }
 li:hover {
   background-color: var(--solid-color-2);
-  margin-left: 3px;
+  margin-left: 2.5px;
+  border-left: none;
+  color: var(--font-color-1);
 }
 </style>
